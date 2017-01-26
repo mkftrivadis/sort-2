@@ -4,4 +4,3 @@
 /app/*.js.map
 /dist/*.js
 /dist/*.js.map
-*.log
