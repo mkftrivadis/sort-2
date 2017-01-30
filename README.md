@@ -54,7 +54,7 @@ myCustomSortingFunction($event) {
 ```javascript
 class MyComponent implements OnInit {
   ngOnInit() {
-    // get your data in descending order here
+    // get your data in descending order here yourself since your html says [default]="'desc'"
   }
 }
 ```
