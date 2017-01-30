@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/mkftrivadis/sort-2.svg?branch=master)](https://travis-ci.org/mkftrivadis/sort-2)
-# sort - **another angularJS 2 sorting plugin**
+# sort - **another AngularJS 2 sorting plugin**
 
 This is the angularJS 2 version of the plugin [here](https://github.com/mkftrivadis/sort/blob/master/README.md)
 
