@@ -43,5 +43,5 @@ describe('sort directive', () => {
 
   it('should not have a custom sort function', () => {
     expect(comp._sortDirective.refresh.observers.length).toEqual(0);
-  });  
+  });
 });

@@ -1,7 +1,6 @@
 import { Directive, ElementRef, EventEmitter, Host, Input, OnDestroy, OnInit, Output, Renderer } from '@angular/core';
 import { SortDirective } from './sort.directive';
-import { Settings } from './settings';
-import { ASC, DESC, DATE, ASCCLASS, DESCCLASS } from './constants'
+import { ASC, DESC, ASCCLASS, DESCCLASS } from './constants';
 
 /**
  * @ngModule
@@ -31,25 +30,25 @@ export class SortPropertyDirective implements OnInit, OnDestroy {
   @Input() type: string;
   @Input() default: string;
   @Input() preset: Array<Object>;
-  
+
   @Output() orderChange = new EventEmitter<string>();
 
-  set nextOrder(newOrder: string) { 
+  set nextOrder(newOrder: string) {
     this._order = newOrder;
   };
   get nextOrder(): string {
     return this._order || ASC;
   }
-  
+
   constructor(private elementRef: ElementRef, private renderer: Renderer, @Host() private container: SortDirective) {
   }
 
   ngOnInit() {
-    this.listenFunc = this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => { 
+    this.listenFunc = this.renderer.listen(this.elementRef.nativeElement, 'click', (event) => {
       this.toggleOrder();
     });
 
-    if (this.default && this.container.refresh.observers.length == 0) {
+    if (this.default && this.container.refresh.observers.length === 0) {
       this.nextOrder = this.default;
       this.toggleOrder();
     }
@@ -63,11 +62,11 @@ export class SortPropertyDirective implements OnInit, OnDestroy {
     let settings = {
       property: this.sortProperty, order: this.nextOrder, type: this.type, default: this.default, preset: this.preset,
       afterCustomSort: () => {
-        if (this.nextOrder == ASC) {
+        if (this.nextOrder === ASC) {
           this.nextOrder = DESC;
           this.renderer.setElementClass(this.elementRef.nativeElement, DESCCLASS, false);
           this.renderer.setElementClass(this.elementRef.nativeElement, ASCCLASS, true);
-        } else if (this.nextOrder == DESC) {
+        } else if (this.nextOrder === DESC) {
           this.nextOrder = ASC;
           this.renderer.setElementClass(this.elementRef.nativeElement, ASCCLASS, false);
           this.renderer.setElementClass(this.elementRef.nativeElement, DESCCLASS, true);
@@ -77,9 +76,8 @@ export class SortPropertyDirective implements OnInit, OnDestroy {
 
     if (this.container.refresh.observers.length > 0) {
       this.container.refresh.emit(settings);
-    }
-    else {
+    } else {
       this.container.sort(settings);
-    }  
+    }
   }
 }

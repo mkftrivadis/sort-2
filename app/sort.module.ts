@@ -12,5 +12,5 @@ import { SortPropertyDirective } from './sortProperty.directive';
 @NgModule({
   declarations: [SortDirective, SortPropertyDirective],
   exports: [SortDirective, SortPropertyDirective]
-})  
+})
 export class SortModule { }

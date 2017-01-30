@@ -6,11 +6,11 @@
  * @class Settings
  */
 export class Settings {
-  property: string
-  order: string
-  type: string
-  default: string
-  preset: Array<Object>
+  property: string;
+  order: string;
+  type: string;
+  default: string;
+  preset: Array<Object>;
 
   /**
    * @description
@@ -20,5 +20,5 @@ export class Settings {
    * @type {Function}
    * @memberOf Settings
    */
-  afterCustomSort: Function
+  afterCustomSort: Function;
 }

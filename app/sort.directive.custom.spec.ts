@@ -1,8 +1,6 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { SortDirective } from './sort.directive';
 
@@ -40,5 +38,5 @@ describe('sort directive with custom sorting', () => {
 
   it('should have a custom sort function', () => {
     expect(comp._sortDirective.refresh.observers.length).toBeGreaterThan(0);
-  });  
+  });
 });

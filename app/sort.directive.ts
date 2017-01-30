@@ -1,6 +1,6 @@
 import { Directive, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 import { Settings } from './settings';
-import { ASC, DESC, DATE } from './constants'
+import { ASC, DATE } from './constants';
 
 /**
  * @ngModule
@@ -20,7 +20,7 @@ import { ASC, DESC, DATE } from './constants'
 @Directive({ selector: '[sort]' })
 export class SortDirective {
   @Input('sort') data: Array<Object>;
-    
+
   /**
    * @description
    * custom sort function. This function is called when the user clicks on a header which is declared
@@ -33,7 +33,7 @@ export class SortDirective {
 
   constructor(private elementRef: ElementRef) {
   }
-  
+
   /**
    * @description
    * default sorting function. This function will not be used if a custom sorting function is provided through
@@ -46,12 +46,11 @@ export class SortDirective {
     if (this.data && this.data.length > 0) {
       if (settings.type === DATE) {
         this.data.sort((a, b) => {
-          var comparison = new Date(b[settings.property]).getTime() - new Date(a[settings.property]).getTime();
+          let comparison = new Date(b[settings.property]).getTime() - new Date(a[settings.property]).getTime();
 
           return settings.order === ASC ? -comparison : comparison;
         });
-      }
-      else {
+      } else {
         this.data.sort((a, b) => {
           if (settings.preset && settings.preset.length > 0) {
             return settings.order === ASC ? settings.preset.indexOf(a[settings.property]) - settings.preset.indexOf(b[settings.property])
@@ -60,8 +59,7 @@ export class SortDirective {
 
           if (a[settings.property] > b[settings.property]) {
             return settings.order === ASC ? 1 : -1;
-          }
-          else if (a[settings.property] < b[settings.property]) {
+          } else if (a[settings.property] < b[settings.property]) {
             return settings.order === ASC ? -1 : 1;
           } else {
             return 0;

@@ -1,6 +1,11 @@
-/node_modules/
-/.vscode/
-/app/*.js
-/app/*.js.map
-/dist/*.js
-/dist/*.js.map
+.vscode/
+.idea
+node_modules
+jspm_packages
+npm-debug.*
+link-checker-results.txt
+*.js.map
+e2e/**/*.js
+e2e/**/*.js.map
+_test-output
+_temp
