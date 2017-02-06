@@ -3,14 +3,16 @@ import { Settings } from './settings';
 import { ASC, DATE } from './constants';
 
 /**
- * @ngModule
+ * @ngModule SortModule
  *
  * @howToUse
+ * ```
  * <parent-node [sort]="component_property_which_points_to_an_array_of_objects"
  *              (refresh)="method($event)">
  *   ...
  * </parent-node>
- *
+ * ```
+ * 
  * @description
  *  `sort` declares a sorting header for tabular data
  * 

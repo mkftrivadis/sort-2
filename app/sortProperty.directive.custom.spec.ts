@@ -5,6 +5,7 @@ import { By } from '@angular/platform-browser';
 import { click } from './index';
 
 import { ASC, ASCCLASS, DESC, DESCCLASS } from './constants';
+import { SortModule } from './sort.module';
 import { SortDirective } from './sort.directive';
 import { SortPropertyDirective } from './sortProperty.directive';
 
@@ -47,7 +48,8 @@ describe('sortProperty directive with custom sorting', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SortDirective, SortPropertyDirective, SortPropertyCustomTestComponent]
+      imports: [SortModule],
+      declarations: [SortPropertyCustomTestComponent]
     });
 
     fixture = TestBed.createComponent(SortPropertyCustomTestComponent);

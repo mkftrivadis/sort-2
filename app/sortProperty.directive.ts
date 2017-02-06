@@ -3,15 +3,17 @@ import { SortDirective } from './sort.directive';
 import { ASC, DESC, ASCCLASS, DESCCLASS } from './constants';
 
 /**
- * @ngModule
+ * @ngModule SortModule
  *
  * @howToUse
+ * ```
  * <parent-node [sort]="see {@link `sort`}">
  *   <any-node  [sortProperty]="property_name"
  *              [type]="'date'"
  *              [default]="'asc' | 'desc'"
  *              [preset]="component_property_which_points_to_an_array"></any-node>
  * </parent-node>
+ * ```
  *
  * @description
  * `sortProperty` declares a sorting property on the sort directive
