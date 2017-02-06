@@ -13,11 +13,14 @@ Include the files from the dist folder in your code. Also import the plugin main
 ```javascript
 import { SortModule } from 'your_path/sort.module';
 ```
-Finally import the *Sort* and *SortProperty* directives where you need them.
+Finally import and declare the *Sort* and *SortProperty* directives where you need them.
 
 ```javascript
 import { SortDirective } from 'your_path/sort.directive';
 import { SortPropertyDirective } from 'your_path/sortProperty.directive';
+...
+declarations: [SortDirective, SortPropertyDirective]
+...
 ```
 
 ### Usage
