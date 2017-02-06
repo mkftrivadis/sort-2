@@ -13,15 +13,6 @@ Include the files from the dist folder in your code. Also import the plugin main
 ```javascript
 import { SortModule } from 'your_path/sort.module';
 ```
-Finally import and declare the *Sort* and *SortProperty* directives in your module.
-
-```javascript
-import { SortDirective } from 'your_path/sort.directive';
-import { SortPropertyDirective } from 'your_path/sortProperty.directive';
-...
-declarations: [SortDirective, SortPropertyDirective]
-...
-```
 
 ### Usage
 The usage is almost the same as for the AngularJS 1.3.1+ version (see [here](https://github.com/mkftrivadis/sort#usage)). There are couple of things you need to remember though:
