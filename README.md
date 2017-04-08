@@ -4,8 +4,8 @@
 This is the angularJS 2 version of the plugin [here](https://github.com/mkftrivadis/sort/blob/master/README.md)
 
 ### Dependencies
-AngularJS 2.0
-TypeScript 2.0.10+
+- AngularJS 2.0
+- TypeScript 2.0.10+
 
 ### Installation
 Include the files from the dist folder in your code. Also import the plugin main module in your own module.
